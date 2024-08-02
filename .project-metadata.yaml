@@ -1,0 +1,51 @@
+name: PromptBrew
+description: "PromptBrew is an application for creating, refining, and testing prompts."
+author: "Cloudera"
+date: "2024-07-11"
+specification_version: 1.0
+prototype_version: 1.0
+
+environment_variables:
+  OPENAI_API_KEY:
+    default: ""
+    description: "OpenAI API Key"
+  AZURE_OPENAI_ENDPOINT:
+    default: ""
+    description: "Azure hosted OpenAI endpoint URL - required if using Azure hosted OpenAI"
+  OPENAI_MODEL:
+    default: "gpt-3.5-turbo"
+    description: "Which OpenAI model to use as the LLM for prompt generation and usage"
+
+runtimes:
+  - editor: JupyterLab
+    kernel: Python 3.10
+    edition: Standard
+
+tasks:
+  - type: create_job
+    name: Build FE project
+    entity_label: refresh_project
+    script: tasks/refresh_project.py
+    arguments: None
+    cpu: 2
+    memory: 2
+    short_summary: Create job to allow refreshing the project from source and rebuilding the webapp.
+    environment:
+      TASK_TYPE: CREATE/RUN_JOB
+
+  - type: run_job
+    entity_label: refresh_project
+    short_summary: Run job to refresh the project from source and rebuild the webapp.
+
+  - type: start_application
+    name: PromptBrew
+    subdomain: promptbrew
+    bypass_authentication: false
+    static_subdomain: false
+    script: tasks/init_prompt_brew.py
+    short_summary: Create and start the PromptBrew service.
+    long_summary: Create and start the PromptBrew service.
+    cpu: 2
+    memory: 1
+    environment_variables:
+      TASK_TYPE: START_APPLICATION

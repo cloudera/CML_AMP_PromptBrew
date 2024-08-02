@@ -1,0 +1,5 @@
+{
+  "importOrder": ["^src/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

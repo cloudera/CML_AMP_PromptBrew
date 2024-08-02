@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "types": ["vite/client", "vite-plugin-svgr/client"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "./",
+    "paths": {
+      "shared/*": ["src/views/shared/*"],
+      "hooks/*": ["src/hooks/*"],
+      "services/*": ["src/services/*"],
+      "generated/*": ["src/generated/*"],
+      "features/*": ["src/features/*"],
+      "src/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "vite.config.ts",
+    "codegen.ts",
+    "src/features/projects/testSetDetails/view/TestSetDetailsSection.tsx"
+  ],
+  "exclude": ["**/node_modules", "**/.*/", "**/*.stories.outdated.*"]
+}
