@@ -24,4 +24,3 @@ entries:
       - Prompt Engineering
       - LLM
     git_url: "https://github.com/cloudera/CML_AMP_PromptBrew"
-    is_prototype: true
