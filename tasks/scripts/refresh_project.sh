@@ -4,9 +4,6 @@ set -eox pipefail
 git stash
 git pull --rebase
 
-## Install dependencies and build ##
-cd FeApp
-
 set +e
 source tasks/scripts/load_nvm.sh > /dev/null
 nvm use 22
@@ -18,6 +15,9 @@ if [ $return_code -ne 0 ]; then
 
     nvm use 22
 fi
+
+## Install dependencies and build ##
+cd FeApp
 
 npm install @pnpm/exe
 ./node_modules/\@pnpm/exe/pnpm install
