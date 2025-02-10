@@ -80,10 +80,10 @@ Ignore this section unless you are working on developing or enhancing this AMP.
 ### FE Setup
 
 - Navigate to the FE subdirectory (`cd ./FeApp`)
-- Make sure node is installed (if not, run `brew install node@20`)
-- Run `pnpm install` (if pnpm is not installed on your system, install globally `brew install pnpm`)
-- Run `pnpm build` to get the contents of the webapp built for the python app to serve it up
-- Start the dev server (`pnpm dev`) [if you want to run the dev server standalone, for debugging, for instance?]
+- Make sure node is installed (if not, run `brew install node@22`)
+- Run `npm install`
+- Run `npm run build` to get the contents of the webapp built for the python app to serve it up
+- Start the dev server (`npm run dev`) [if you want to run the dev server standalone, for debugging, for instance?]
 
 ### Python Setup
 
