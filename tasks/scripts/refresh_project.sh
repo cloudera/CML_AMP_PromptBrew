@@ -20,7 +20,6 @@ fi
 ## Install dependencies and build ##
 cd FeApp
 
-npm install @pnpm/exe
-./node_modules/\@pnpm/exe/pnpm install
-./node_modules/\@pnpm/exe/pnpm build
+npm install
+npm run build
 
