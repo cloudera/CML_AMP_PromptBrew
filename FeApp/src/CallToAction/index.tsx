@@ -48,7 +48,7 @@ const CallToAction = () => {
         <p style={{ color: "#00828c", marginTop: 0 }}>
           Building with GenAI? Our product team would love to hear from you.
         </p>
-        <Button color="#f96702" href="mailto:abutkovic@cloudera.com">
+        <Button href="mailto:abutkovic@cloudera.com">
           Contact Us
         </Button>
       </Flex>
